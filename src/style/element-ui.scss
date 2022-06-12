@@ -1,0 +1,29 @@
+.el-main {
+  padding: 0;
+}
+
+.el-menu--popup {
+  min-width: 80px !important;
+}
+
+.el-select {
+  width: 100%;
+}
+
+
+.el-date-editor.el-input {
+  width: 100%;
+}
+
+.el-input-number {
+  width: 100%;
+  .el-input__inner {
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .el-message-box {
+    width: 60% !important;
+  }
+}

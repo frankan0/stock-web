@@ -1,0 +1,66 @@
+.app-container {
+  margin: 10px;
+  min-height: calc(100vh - 120px);
+
+  .line {
+    line-height: 18px;
+    font-size: 14px;
+    margin: 10px 0;
+    .label {
+      float: left;
+      width: 80px;
+      margin-right: 20px;
+      text-align: right;
+    }
+    .content {
+      margin-left: 100px;
+      color: #888;
+      word-break: break-all;
+    }
+  }
+
+}
+
+textarea {
+	font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+}
+
+
+.el-header {
+  position: fixed;
+  width: 100vw;
+  z-index: 1000;
+  // height: 80px;
+  background: #fff;
+  line-height: 60px;
+  padding: 0;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  .logo {
+    width: 240px;
+    height: 50px;
+    margin-top: 5px;
+  }
+  .app-header {
+    position: relative;
+  }
+  .app-header-user {
+    position: absolute;
+    right: 20px;
+  }
+  
+  .app-mobile-header {
+    position: relative;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    .app-mobile-logo {
+      width: 200px;
+      height: 40px;
+    }
+  }
+  .app-mobile-nav {
+    width: 100% !important;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  }
+  
+}
