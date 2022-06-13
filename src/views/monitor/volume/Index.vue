@@ -10,10 +10,15 @@
                 <el-option key="2"  value="2" label="5日均成交量"></el-option>
             </el-select>
         </el-form-item>
-        <el-form-item label="比例">
+        <el-form-item label="放大比例">
             <el-input-number size="mini" v-model="queryParams.multiple" :precision="2" :step="0.1" :max="10"></el-input-number>
         </el-form-item>
-
+        <el-form-item label="涨跌选项">
+           <el-select size="mini" v-model="queryParams.upDown" placeholder="请选择涨跌选项">
+                <el-option key="1"  value="1" label="涨"></el-option>
+                <el-option key="2"  value="2" label="跌"></el-option>
+            </el-select>
+        </el-form-item>    
         <el-form-item>
           <el-button size="mini" icon="el-icon-refresh" @click="getList">查询</el-button>
         </el-form-item>
@@ -22,6 +27,7 @@
       <el-table v-loading="loading" :data="dataList" size="mini" stripe="true" border="true">
         <el-table-column label="股票代码" align="left" prop="base_info.ts_code" />
         <el-table-column label="股票名称" align="left" prop="base_info.name" />
+        <el-table-column label="板块" align="left" prop="base_info.market" />
         <el-table-column label="当前价" align="left" prop="avg.current_price" />
         <el-table-column label="涨跌幅" align="left" prop="avg.pct_chg" />
         <el-table-column label="换手率" align="left" prop="avg.pct_chg" />
@@ -49,7 +55,8 @@ export default {
       // 查询参数
       queryParams: {
         dayType: "1",
-        multiple: 2,
+        multiple: 1,
+        upDown: "1",
       },
       dataList: [],
       orderStatusOptions: [],

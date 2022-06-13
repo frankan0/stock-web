@@ -13,7 +13,7 @@ module.exports = {
   lintOnSave: process.env.NODE_ENV === 'development',
   productionSourceMap: false,
   devServer: {
-    port: 81,
+    port: 10900,
     open: true,
     proxy: {
       '/dev-api': {
