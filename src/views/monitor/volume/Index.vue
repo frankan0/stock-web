@@ -24,17 +24,23 @@
         </el-form-item>
       </el-form>
 
-      <el-table v-loading="loading" :data="dataList" size="mini" stripe="true" border="true">
-        <el-table-column label="股票代码" align="left" prop="base_info.ts_code" />
+      <el-table v-loading="loading" :data="dataList" size="mini" :stripe="true" :border="true">
+        <el-table-column label="股票代码" align="left" prop="base_info.ts_code">
+         <template slot-scope="scope">
+          {{scope.row.base_info.ts_code}}
+          <i class="el-icon-star-off"></i>
+        </template>
+        </el-table-column>
         <el-table-column label="股票名称" align="left" prop="base_info.name" />
         <el-table-column label="板块" align="left" prop="base_info.market" />
         <el-table-column label="当前价" align="left" prop="avg.current_price" />
         <el-table-column label="涨跌幅" align="left" prop="avg.pct_chg" />
-        <el-table-column label="换手率" align="left" prop="avg.pct_chg" />
-        <el-table-column label="当前市值" align="left" prop="daily.amount" />
+        <el-table-column label="换手率" align="left" prop="daily_base.turnover_rate" />
+        <el-table-column label="当前市值(亿)" align="left" prop="daily_base.total_mv" />
+        <el-table-column label="PE" align="left" prop="daily_base.pe" />
         <el-table-column label="成交量" align="left" prop="avg.current_vol" />
-        <el-table-column label="3日均成交量" show-overflow-tooltip="true" align="left" prop="avg.avg_three" />
-        <el-table-column label="5日均成交量" show-overflow-tooltip="true" align="left" prop="avg.avg_five" />
+        <el-table-column label="3日均成交量" :show-overflow-tooltip="true" align="left" prop="avg.avg_three" />
+        <el-table-column label="5日均成交量" :show-overflow-tooltip="true" align="left" prop="avg.avg_five" />
       </el-table>
 
     </el-card>
@@ -54,8 +60,8 @@ export default {
       total: 0,
       // 查询参数
       queryParams: {
-        dayType: "1",
-        multiple: 1,
+        dayType: "2",
+        multiple: 2,
         upDown: "1",
       },
       dataList: [],

@@ -15,6 +15,7 @@
               router>
               <el-menu-item index="/">首页</el-menu-item>
               <el-menu-item index="/monitor/volume">监控</el-menu-item>
+              <el-menu-item index="/stock/my">自选</el-menu-item>
             </el-menu>
           </el-col>
          
